@@ -1,7 +1,6 @@
 package main;
 
 import java.io.IOException;
-import java.util.Date;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -19,16 +18,9 @@ public class Main {
 		doc = Jsoup.connect(baseUrl).get();
 		mainArticle= Main.doc.select("article.titre_une"); //select news headline
 		
-		Date date = new Date();
-		System.out.println(date);
-		
+		Today.printDate();
 		Link.printLink();
 		Title.printTitle();
-		
-//		JSONObject entry = new JSONObject();
-//		entry.put("Date",date);
-//		entry.put("Link",linkHref);
-//		entry.put("Main_title",mainTitle);
 	}
 	
 

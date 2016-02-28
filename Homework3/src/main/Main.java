@@ -11,10 +11,13 @@ import org.jsoup.select.Elements;
 public class Main {
 
 	public static void main(String[] args) throws IOException {
-		Document document = Jsoup.connect("http://www.thehackernews.com").get();
-		Elements headlines = document.select("a.entry-title"); // here you can write a CSS selector
-		for (Element headline : headlines) {}
-
+		Document doc = Jsoup.connect("http://www.lemonde.fr/").get();
+		Elements titleAll = doc.select("h1.tt3");
+		for (Element element : titleAll.select("span")) {
+			element.remove();
+		}
+		String mainTitle = titleAll.text();
 	}
+	
 
 }

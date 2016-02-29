@@ -9,7 +9,7 @@ public class Link {
 	static String linkHref;
 	
 	public static String link() throws IOException {
-		Element link = Main.mainArticle.select("a").first(); //select link of news headline
+		Element link = Main.doc.select("a").first(); //select link of news headline
 		linkHref = Main.baseUrl + link.attr("href"); //extract and build link of headline
 		return linkHref;
 	}

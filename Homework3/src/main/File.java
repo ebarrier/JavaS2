@@ -1,16 +1,29 @@
 package main;
 
+import java.io.IOException;
+
+import org.json.JSONException;
 import org.json.JSONObject;
 
 public class File {
 	
+	static JSONObject entry = new JSONObject();
 	
+	public static void addEntry() throws JSONException, IOException{
+		
+		if (entry.equals(entry)) {
+			entry.put("Date",Today.date());
+			entry.put("Link",Link.link());
+			entry.put("Main_title",Title.titles());			
+		} else {
+			entry.accumulate("Date",Today.date());
+			entry.accumulate("Link",Link.link());
+			entry.accumulate("Main_title",Title.titles());	
+		}
+	}
 	
-//	public static void addEntry(){
-//		JSONObject entry = new JSONObject();
-//		entry.put("Date",Date.printDate());
-//		entry.put("Link",linkHref);
-//		entry.put("Main_title",mainTitle);
-//	}
+	public static void printFile() {
+		System.out.println(entry);
+	}
 
 }

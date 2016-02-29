@@ -15,9 +15,9 @@ public class Main {
 		
 		doc = Jsoup.connect(baseUrl).get();		
 		
-//		Today.printDate();
-//		Link.printLink();
-		Title.titles();
+		Today.printDate();
+		Link.printLinks();
+		Title.printTitles();
 		
 //		File.addEntry();
 //		File.printFile();

@@ -13,11 +13,11 @@ public class File {
 		
 		if (entry.equals(entry)) {
 			entry.put("Date",Today.date());
-			entry.put("Link",Link.link());
+			entry.put("Link",Link.links());
 			entry.put("Main_title",Title.titles());			
 		} else {
 			entry.accumulate("Date",Today.date());
-			entry.accumulate("Link",Link.link());
+			entry.accumulate("Link",Link.links());
 			entry.accumulate("Main_title",Title.titles());	
 		}
 	}

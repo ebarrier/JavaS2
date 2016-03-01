@@ -1,5 +1,6 @@
 package main;
 
+import java.io.FileWriter;
 import java.io.IOException;
 
 import org.json.JSONException;
@@ -9,7 +10,7 @@ public class File {
 	
 	static JSONObject entry = new JSONObject();
 	
-	public static void addEntry() throws JSONException, IOException{
+	public static JSONObject addEntry() throws JSONException, IOException{
 		
 		if (entry.equals(entry)) {
 			entry.put("Date",Today.date());
@@ -20,6 +21,8 @@ public class File {
 			entry.accumulate("Link",Link.links());
 			entry.accumulate("Main_title",Title.titles());	
 		}
+		
+		return entry;
 	}
 	
 	public static void printFile() {

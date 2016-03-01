@@ -42,7 +42,7 @@ public class Title {
 		}
 		
 //		System.out.println(titles);
-		System.out.println("There are " + titles.size() + " titles");
+//		System.out.println("There are " + titles.size() + " titles");
 		
 		return titles;
 	}

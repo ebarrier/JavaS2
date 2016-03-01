@@ -32,7 +32,7 @@ public class Link {
 			}
 		}
 //		System.out.println(links);
-		System.out.println("There are " + links.size() + " links");
+//		System.out.println("There are " + links.size() + " links");
 		
 		return links;
 	}

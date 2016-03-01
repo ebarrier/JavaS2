@@ -20,7 +20,7 @@ public class Main {
 		Title.printTitles();
 		
 //		File.addEntry();
-//		File.printFile();
+		File.printFile();
 	}
 	
 

@@ -7,8 +7,8 @@ import org.jsoup.select.Elements;
 
 public class Title {
 	
-	static ArrayList<String> titles;
-	
+	private static ArrayList<String> titles;
+
 	public static ArrayList<String> titles() {
 		
 		Elements titlesH1 = Main.doc.select("article.titre_une").select("h1");

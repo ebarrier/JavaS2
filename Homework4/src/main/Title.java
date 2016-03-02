@@ -14,11 +14,7 @@ public class Title {
 		Elements titlesH1 = Main.doc.select("article.titre_une").select("h1");
 		Elements titlesH2 = Main.doc.select("article.grid_6*").select("h2");
 		Elements titlesH3 = Main.doc.select("div[class=titres_liste]").select("a").select("h3");
-		
-//		Elements titlesH1 = Main.doc.select("h1.tt3");
-//		Elements titlesH2 = Main.doc.select("h2.tt6");
-//		Elements titlesH3 = Main.doc.select("h3[class=\"\"]");
-		
+				
 		ArrayList<Elements> listTitles = new ArrayList<Elements>();
 		listTitles.add(titlesH1);
 		listTitles.add(titlesH2);

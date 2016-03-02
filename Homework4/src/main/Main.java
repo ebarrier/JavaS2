@@ -22,31 +22,26 @@ public class Main {
 		
 		System.out.println();
 		File.printFile();
-		
-		
-//		OutputStreamWriter writer = new OutputStreamWriter(
-//                new FileOutputStream("YourFile.txt"));
-//		writer.write(File.entry.toString());
-//		writer.flush();
-//		writer.close();
-		
-		FileWriter file = new FileWriter("file1.txt", true);
-//		file.write(Today.date());
-//		file.write(Title.titles().toString());
-//		file.write(Link.links().toString());
-//		file.write("\r\n");
-//		file.write("\r\n");
-		file.write(File.entry.getString("Date"));
-		file.write("\n");
+				
+		FileWriter file1 = new FileWriter("file1.txt", true);
+		file1.write(File.entry.getString("Date"));
+		file1.write("\n");
 		for (int i = 0; i < File.entry.getJSONArray("Link").length(); i++) {
-			file.write(File.entry.getJSONArray("Main_title").getString(i));
-			file.write("\n");
-			file.write(File.entry.getJSONArray("Link").getString(i));
-			file.write("\n");
+			file1.write(File.entry.getJSONArray("Main_title").getString(i));
+			file1.write("\n");
+			file1.write(File.entry.getJSONArray("Link").getString(i));
+			file1.write("\n");
 		}
-		file.write("\n");
-		file.flush();
-		file.close();
+		file1.write("\n");
+		file1.flush();
+		file1.close();
+		
+		FileWriter file2 = new FileWriter("Json.txt", true);
+		file2.write(File.entry.toString());
+		file2.write("\n");
+		file2.flush();
+		file2.close();
+		
 	}
 	
 

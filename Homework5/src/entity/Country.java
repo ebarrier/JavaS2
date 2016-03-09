@@ -2,24 +2,34 @@ package entity;
 
 import java.util.Set;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Country {
 	
-	long id;
-	String name;
-	int population;
-	Set<City> cities;
-	
 	@Id
 	@GeneratedValue
+	int id;
+	
+	@Column (name = "name")
+	private String name;
+	
+	@Column (name = "population")
+	private int population;
+	
+	@OneToMany(mappedBy="country")
+	private Set<City> cities;
+	
+	public Country() {}
+	
 	public long getId() {
 		return id;
 	}
-	public void setId(long id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 	public String getName() {

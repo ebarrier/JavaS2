@@ -1,24 +1,19 @@
 package factory;
 
 import org.hibernate.SessionFactory;
-import org.hibernate.cfg.Configuration;;
+import org.hibernate.cfg.Configuration;
 
 public class HibernateEngine {
 
+	private static final SessionFactory sessionFactory;
 
-	public class InitSessionFactory {
-	   /** The single instance of hibernate SessionFactory */
-	   private static org.hibernate.SessionFactory sessionFactory;
-	   private InitSessionFactory() {
-	   }
-
-	   static {
-	      final Configuration cfg = new Configuration();
-	      cfg.configure("/hibernate.cfg.xml");
-	      sessionFactory = cfg.buildSessionFactory();
+	static {
+	      final Configuration config = new Configuration();
+	      config.configure("/resources/hibernate.cfg.xml");
+	      sessionFactory = config.buildSessionFactory();
 	   }
 	   public static SessionFactory getInstance() {
 	      return sessionFactory;
 	   }
-	}
+	
 }

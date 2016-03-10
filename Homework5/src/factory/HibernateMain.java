@@ -3,6 +3,8 @@ package factory;
 import java.util.List;
 
 import org.hibernate.Session;
+import org.hibernate.Transaction;
+
 import entity.City;
 import entity.Country;
 
@@ -29,7 +31,8 @@ public class HibernateMain {
     }
 	
 	public static void addCountry() {
-        System.out.println("What is the country's name?");
+		Transaction tx = session.beginTransaction();
+		System.out.println("What is the country's name?");
         String name = TextIO.getlnString();
         
         Country country = new Country();
@@ -40,9 +43,12 @@ public class HibernateMain {
         country.setPopulation(pop);
         
         session.persist(country);
+        session.save(country);
+        tx.commit();
     }
 	
 	public static void main(String[] args) {
+		session.getSessionFactory().openSession();
 		addCountry();
 	}
 

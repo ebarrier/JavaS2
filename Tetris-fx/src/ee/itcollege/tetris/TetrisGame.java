@@ -59,20 +59,20 @@ public class TetrisGame extends Application {
 		
 			if (KeyCode.LEFT.equals(event.getCode())) {
 				figure.move(-1, 0);
-				System.out.format("first block absolute y: %.0f\n",
-						figure.getChildren().get(0).getLocalToSceneTransform().getTy());
+//				System.out.format("first block absolute y: %.0f\n",
+						figure.getChildren().get(0).getLocalToSceneTransform().getTy();
 			}
 			
 			else if (KeyCode.RIGHT.equals(event.getCode())) {
 				figure.move(1, 0);
-				System.out.format("first block absolute y: %.0f\n",
-						figure.getChildren().get(0).getLocalToSceneTransform().getTy());
+//				System.out.format("first block absolute y: %.0f\n",
+						figure.getChildren().get(0).getLocalToSceneTransform().getTy();
 			}
 			
 			else if (KeyCode.UP.equals(event.getCode())) {
 				figure.rotate();
-				System.out.format("first block absolute y: %.0f\n",
-						figure.getChildren().get(0).getLocalToSceneTransform().getTy());
+//				System.out.format("first block absolute y: %.0f\n",
+						figure.getChildren().get(0).getLocalToSceneTransform().getTy();
 			}
 			
 		});

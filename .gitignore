@@ -36,11 +36,13 @@
 ehthumbs.db
 Thumbs.db
 **/bin
+**/logs
+**/target
 
 #Eclipse files#
 ###############
 .metadata
 .recommenders
 RemoteSystemsTempFiles
-.settings
+**/.settings
 

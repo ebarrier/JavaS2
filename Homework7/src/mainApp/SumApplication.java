@@ -1,10 +1,15 @@
 package mainApp;
 
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.stereotype.Component;
+
+import configuration.SpringConfig;
 import services.InfInteractionServ;
 
 public class SumApplication {
 	
-	private InfInteractionServ inputSer;
+	//private InfInteractionServ inputSer;
 	
 	public int sum(int number) {
 		int sum=0;
@@ -16,17 +21,14 @@ public class SumApplication {
 		return sum;
 	}
 	
-	public void start() {
-		inputSer.print("Hello!");
-		int number = inputSer.getInt();
-		inputSer.print("you have entered the number " + number);
-	}
-	
 	
 	public static void main(String[] args) {
 		
-		SumApplication function = new SumApplication();
-		function.start();
+		ApplicationContext context = new AnnotationConfigApplicationContext(SpringConfig.class);
+		InfInteractionServ interServ = context.getBean(InfInteractionServ.class);
+		System.out.println("Hello!");
+		int number = interServ.getInt();
+		System.out.println("you have entered the number " + number);
 	}
 	
 }

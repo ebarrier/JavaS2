@@ -2,19 +2,15 @@ package services;
 
 import java.util.Scanner;
 
-public class InteractionService implements InfInteractionServ {
+public class InteractionScanner implements InfInteractionServ {
 
 	@Override
 	public int getInt() {
 		Scanner scanner = new Scanner(System.in);
 		int number = scanner.nextInt();
+		System.out.println("SCANNER");
 		scanner.close();
 		return number;
-	}
-
-	@Override
-	public void print(Object o) {
-		System.out.println(o);
 	}
 
 	

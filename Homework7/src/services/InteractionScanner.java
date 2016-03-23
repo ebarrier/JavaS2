@@ -13,5 +13,10 @@ public class InteractionScanner implements InfInteractionServ {
 		return number;
 	}
 
+	@Override
+	public int setInt(int x) {
+		return x;
+	}
+
 	
 }

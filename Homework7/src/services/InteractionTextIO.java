@@ -8,5 +8,10 @@ public class InteractionTextIO implements InfInteractionServ {
 		System.out.println("TEXTIO");
 		return number;
 	}
+	
+	@Override
+	public int setInt(int x) {
+		return x;
+	}
 
 }

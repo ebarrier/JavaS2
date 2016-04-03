@@ -25,20 +25,11 @@ public class Delete extends HttpServlet {
 
 		File tempFile = new File("tempList.txt");
 		Path pathTemp = tempFile.toPath();
-		// if(!tempFile.exists()) {
-		// tempFile.createNewFile();
-		// }
+
 		if (!Files.exists(pathTemp)) {
 			Files.createFile(pathTemp);
 		}
 
-//		FileWriter tempFileWriter;
-//		try {
-//			tempFileWriter = new FileWriter(tempFile, true);
-//		} catch (IOException e) {
-//			throw new RuntimeException(e);
-//		}
-//		BufferedWriter tempBuffWriter = new BufferedWriter(tempFileWriter);
 		BufferedWriter tempWriter = null;
 		try {tempWriter = Files.newBufferedWriter(pathTemp);
 		} catch (IOException x) {
@@ -47,15 +38,11 @@ public class Delete extends HttpServlet {
 
 		File file = new File("list.txt");
 		Path pathFile = file.toPath();
-//		if (!file.exists()) {
-//			file.createNewFile();
-//		}
+
 		if (!Files.exists(pathFile)) {
 			Files.createFile(pathFile);
 		}
 		
-//		FileReader fileReader = new FileReader(file);
-//		BufferedReader buffReader = new BufferedReader(fileReader);
 		BufferedReader fileReader = null;
 		try {fileReader = Files.newBufferedReader(pathFile);
 		} catch (IOException x) {
@@ -77,13 +64,6 @@ public class Delete extends HttpServlet {
 		tempWriter.flush();
 		tempWriter.close();
 		
-//		file.renameTo(new File("todelete.txt"));
-//		if (tempFile.renameTo(new File("list.txt"))) {
-//			System.out.println("tempfile renamed");
-//			// file.delete();
-//		} else {
-//			System.out.println("temFile not renamed");
-//		}
 		Files.copy(pathTemp, pathFile, StandardCopyOption.REPLACE_EXISTING);
 		Files.delete(pathTemp);
 

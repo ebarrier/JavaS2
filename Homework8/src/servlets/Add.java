@@ -28,6 +28,7 @@ public class Add extends HttpServlet {
 		BufferedWriter buffWriter = new BufferedWriter(fileWriter);
 		if (req.getParameter("item").trim().isEmpty()) {
 			writer.println("Item must not be null, please insert something");
+			resp.setStatus(HttpServletResponse.SC_MOVED_TEMPORARILY);
 			resp.setHeader("form", "/form");
 		} else {
 			buffWriter.write(req.getParameter("item"));

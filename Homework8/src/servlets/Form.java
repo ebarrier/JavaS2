@@ -40,7 +40,6 @@ public class Form extends HttpServlet {
 		buffReader.close();
 		
 		out.println("</ul>");
-		
 		out.println("<form action=\"add\" method=\"post\">");
 		out.println("<input type=\"text\" name=\"item\" placeholder=\"add an item\" />");
 		out.println("<input type=\"submit\" name=\"submit\" value=\"Add\" />");

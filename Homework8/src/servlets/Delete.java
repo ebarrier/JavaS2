@@ -69,7 +69,8 @@ public class Delete extends HttpServlet {
 
 		PrintWriter writer = resp.getWriter();
 		resp.setHeader("content-type", "text/html");
-		writer.println("Item<strong> " + req.getParameter("id") + " </strong> removed from file");
+		writer.println("<h1>Item<em> " + req.getParameter("id") + " </em> removed from file</h1>");
+		resp.setHeader("Refresh","3;url=/form");
 		resp.setStatus(HttpServletResponse.SC_OK);
 	}
 }

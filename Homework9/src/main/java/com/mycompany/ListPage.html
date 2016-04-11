@@ -19,10 +19,15 @@
 				Please enter the elements that you would like to add to the list.<br>
 				You can also remove items from the list.
 			</p>
-			<p>
-			</p> 
-		</div>
-		<div id="ft">
+			<form id="itemField" method="get" wicket:id="itemForm">
+  				<fieldset>
+    				<legend style="color: #F90">Item</legend>
+    					<span>Insert item: </span><input wicket:id="itemForm" type="text" id="item" /><br/>
+    					<p>
+    						<input type="submit" name="Item" value="Insert"/>
+    					</p>
+  	   	    	</fieldset>
+			</form>
 		</div>
 	</body>
 </html>

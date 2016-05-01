@@ -15,10 +15,11 @@ public class ImgFile {
 	public static void main(String[] args) throws IOException {
 		
 		loadImage("src/resources/Heart_Filled-128.png");
-		
-		resizeImg(origImg, 50,50);
+				
+		resizeImg(origImg, 40,40);
 		
 		sysoutImg(resImg);
+		
 	}
 	
 	public static BufferedImage loadImage(String path) {
@@ -28,9 +29,9 @@ public class ImgFile {
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
+		
 		return origImg;
 	}
-
 	
 	public static BufferedImage resizeImg(BufferedImage oImg, int width, int height) {
 		resImg = new BufferedImage(width, height, oImg.getType());
@@ -45,6 +46,7 @@ public class ImgFile {
 			StringBuilder sb = new StringBuilder();
 			for (int x = 0; x < img.getWidth(); x++) {
 				sb.append(img.getRGB(x, y) == -16777216 ? "#" : img.getRGB(x, y) == -1 ? " " : "*");
+//				sb.append(img.getRGB(x, y));
 			}
 			if (sb.toString().trim().isEmpty()) continue;
 			System.out.println(sb);

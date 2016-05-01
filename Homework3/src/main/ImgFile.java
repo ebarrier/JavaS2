@@ -16,9 +16,10 @@ public class ImgFile {
 		
 		loadImage("src/resources/Heart_Filled-128.png");
 				
-		resizeImg(origImg, 40,40);
+		resizeImg(origImg, 10,10);
 		
 		sysoutImg(resImg);
+		sysoutImg(origImg);
 		
 	}
 	
@@ -45,8 +46,8 @@ public class ImgFile {
 		for (int y = 0; y < img.getHeight(); y++) {
 			StringBuilder sb = new StringBuilder();
 			for (int x = 0; x < img.getWidth(); x++) {
-				sb.append(img.getRGB(x, y) == -16777216 ? "#" : img.getRGB(x, y) == -1 ? " " : "*");
-//				sb.append(img.getRGB(x, y));
+				sb.append(img.getRGB(x, y) < 0 ? "#" : " ");
+//				sb.append(img.getRGB(x, y) + "  ");
 			}
 			if (sb.toString().trim().isEmpty()) continue;
 			System.out.println(sb);

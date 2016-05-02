@@ -19,35 +19,25 @@ public class Conversation {
 		return name2;
 	}
 	
-	public static long askAge() {
-		SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyy");
-		System.out.println("Hello! What's your birthdate? (Use the dd/mm/yyy format please)");
-		String dob = TextIO.getlnString();
-		Date date = null;
-		try {
-		      date = dateFormat.parse(dob);
-		    } catch (ParseException e) {
-		      e.printStackTrace();
-		    }
-		long timeStamp = date.getTime();
-		return timeStamp;
-	}
 	
-	public static int fibonacci(int index) {
-		int a = 0;
-		int result = 1;
+	public static long fibonacci(int index) {
+		long a = 0;
+		long result = 1;
 		
 		for (int i = 2; i < index + 1; i++) {
-			int b = a;
+			long b = a;
 			result = result + a;
 			a = result - b;
+			System.out.print(" " + result);
 		}
 		return result;
 	}
 	
 	
 	public static void main(String[] args) {
-		fibonacci(8);
+		fibonacci(70);
+		
+		askFirstName();
 		
 	}
 
